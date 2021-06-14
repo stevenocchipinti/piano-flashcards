@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Head from "next/head"
-import Octave from "../components/Octave"
+import Piano from "../components/Piano"
 import { WhiteButtons, BlackButtons } from "../components/Buttons"
 import { useState, useEffect } from "react"
 
@@ -10,14 +10,13 @@ const whiteKeys = ["a", "b", "c", "d", "e", "f", "g"]
 const blackKeys = ["a-sharp", "c-sharp", "d-sharp", "f-sharp", "g-sharp"]
 const keys = [...whiteKeys, ...blackKeys]
 
-const randomKey = () => keys[(Math.random() * keys.length) | 0]
-
 const Keys = () => {
   const [key, setKey] = useState("c")
+
   const setRandomKey = () => {
-    const newKey = randomKey()
-    if (newKey !== key) setKey(newKey)
-    else setRandomKey()
+    const otherKeys = keys.filter(k => k !== key)
+    const nextKey = otherKeys[(Math.random() * otherKeys.length) | 0]
+    setKey(nextKey)
   }
   const isWhiteKey = whiteKeys.includes(key)
 
@@ -41,7 +40,7 @@ const Keys = () => {
       </Head>
 
       <Main>
-        <Octave arrow={key} showLabels />
+        <Piano arrow={key} />
         {isWhiteKey ? (
           <WhiteButtons onClick={onClick} />
         ) : (

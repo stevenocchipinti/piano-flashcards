@@ -94,4 +94,4 @@ const BlackButtons = ({ onClick }) => (
   </Grid>
 )
 
-export { WhiteButtons, BlackButtons }
+export { Button, WhiteButtons, BlackButtons }
