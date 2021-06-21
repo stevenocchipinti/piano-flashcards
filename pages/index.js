@@ -1,18 +1,31 @@
 import Link from "next/link"
-import Image from "next/image"
-import Head from "next/head"
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
-import { Button } from "../components/Buttons"
+import Logo from "../components/Logo"
 
 const Header = styled.header`
-  background-color: black;
-  padding-top: 1rem;
-  h1 {
-    text-align: center;
-    color: white;
-    margin-top: 1rem;
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem 2rem;
+`
+
+const HeaderLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Antic Didone";
+
+  :hover {
+    text-decoration: underline;
   }
+`
+
+const Heading = styled.h1`
+  font-size: 2.25rem;
+  margin-left: 1rem;
 `
 
 const Main = styled.main`
@@ -20,56 +33,70 @@ const Main = styled.main`
 `
 
 const Buttons = styled.div`
-  font-size: 1.25rem;
+  font-size: 2rem;
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
+  margin: auto;
 `
 
-const ButtonLink = styled(Button).attrs({ as: "a" })`
+const ButtonLink = styled.button.attrs({ as: "a" })`
+  background-color: white;
+  color: inherit;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   text-decoration: none;
+  font-family: "Raleway";
   display: block;
   padding: 1rem;
   margin-top: 1rem;
-  position: relative;
+
+  transition: 0.2s ease-in-out;
+  :hover {
+    transform: scale(1.05);
+  }
 `
 
-const Symbols = styled.span`
-  position: absolute;
-  right: 1rem;
-  display: inline-block;
+const GlobalStyle = createGlobalStyle`
+  html {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)), url("/bg.jpg");
+    background-size: cover;
+  }
+`
+
+const Layout = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
 `
 
 export default function Home() {
   return (
-    <>
+    <Layout>
+      <GlobalStyle />
+
       <Header>
-        <h1>Piano Flashcards</h1>
-        {/*<!-- Photo by <a href="https://unsplash.com/@jplenio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Johannes Plenio</a> on <a href="https://unsplash.com/s/photos/piano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->*/}
-        <Image src="/piano.jpg" width={1920} height={1080} />
+        <Link href="/" passHref>
+          <HeaderLink>
+            <Logo css="max-height: 100px; max-width: 100px;" />
+            <Heading>Piano Flashcards</Heading>
+          </HeaderLink>
+        </Link>
       </Header>
 
       <Main>
-        <h2>What would you like the practice today?</h2>
-
         <Buttons>
           <Link href="/letters-by-key" passHref>
-            <ButtonLink>
-              <Symbols>🎹 → 🅰️ </Symbols>Letters by key
-            </ButtonLink>
+            <ButtonLink>Letters by key</ButtonLink>
           </Link>
           <Link href="/keys-by-letter" passHref>
-            <ButtonLink>
-              <Symbols>🅰️ → 🎹</Symbols>Keys by letters
-            </ButtonLink>
+            <ButtonLink>Keys by letters</ButtonLink>
           </Link>
           <Link href="/keys-by-staff" passHref>
-            <ButtonLink>
-              <Symbols>♩ → 🎹</Symbols> Keys by staff
-            </ButtonLink>
+            <ButtonLink>Keys by staff</ButtonLink>
           </Link>
         </Buttons>
       </Main>
-    </>
+    </Layout>
   )
 }

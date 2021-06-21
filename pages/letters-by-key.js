@@ -1,10 +1,8 @@
-import styled from "styled-components"
-import Head from "next/head"
-import Piano from "../components/Piano"
-import { WhiteButtons, BlackButtons } from "../components/Buttons"
 import { useState, useEffect } from "react"
 
-const Main = styled.main``
+import Layout from "../components/Layout"
+import Piano from "../components/Piano"
+import { WhiteButtons, BlackButtons } from "../components/Buttons"
 
 const whiteKeys = ["a", "b", "c", "d", "e", "f", "g"]
 const blackKeys = ["a-sharp", "c-sharp", "d-sharp", "f-sharp", "g-sharp"]
@@ -32,22 +30,14 @@ const Keys = () => {
   useEffect(() => setRandomKey(), [])
 
   return (
-    <>
-      <Head>
-        <title>Piano keys</title>
-        <meta name="description" content="Train your visual memory for piano" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Main>
-        <Piano arrow={key} />
-        {isWhiteKey ? (
-          <WhiteButtons onClick={onClick} />
-        ) : (
-          <BlackButtons onClick={onClick} />
-        )}
-      </Main>
-    </>
+    <Layout>
+      <Piano arrow={key} />
+      {isWhiteKey ? (
+        <WhiteButtons onClick={onClick} />
+      ) : (
+        <BlackButtons onClick={onClick} />
+      )}
+    </Layout>
   )
 }
 

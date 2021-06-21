@@ -2,10 +2,10 @@ import styled from "styled-components"
 
 const Button = styled.button`
   border-radius: 12px;
-  background-color: #4fd1c5;
-  color: white;
+  background-color: white;
+  font-weight: 700;
   border: 0;
-  box-shadow: #2c7a7b 0px 3px 0px 0px;
+  box-shadow: #777 0px 3px 0px 0px, 0px 0px 1px rgba(0, 0, 0, 0.25);
   transition: 0.1s;
 
   &:active {

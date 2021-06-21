@@ -1,13 +1,16 @@
 import { createGlobalStyle } from "styled-components"
 import Head from "next/head"
 
+import "@fontsource/raleway/100.css"
+import "@fontsource/antic-didone/400.css"
+
+import CssReset from "../components/CssReset"
+
 const GlobalStyle = createGlobalStyle`
-  html, body, h1, h2, h3, h4, h5, h6 {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    color: #171923;
+  html, body {
+    font-family: "Raleway";
+    -webkit-font-smoothing: antialiased;
+    color: #2d2d2d;
   }
 
   body {
@@ -22,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <CssReset />
       <GlobalStyle />
-      <Component {...pageProps} />
       <Head>
         <title>Piano flashcards</title>
         <meta name="description" content="Train your visual memory for piano" />
@@ -50,6 +53,7 @@ export default function App({ Component, pageProps }) {
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
+      <Component {...pageProps} />
     </>
   )
 }

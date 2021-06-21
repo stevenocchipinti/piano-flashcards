@@ -158,6 +158,16 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@fontsource/antic-didone@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/antic-didone/-/antic-didone-4.4.5.tgz#b2c69f76147b372c348bbb4db2bf3c87980486f5"
+  integrity sha512-MD5hy6WOP/cv222hP4JTa48+FadWGrOGRzwzGf96mV5tVG+hU5LEfB6COWZCEPhkO332o9yRuD0c4HOpHV4mxQ==
+
+"@fontsource/raleway@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/raleway/-/raleway-4.4.5.tgz#483871d82aa35e6a981b370b44dbae0b9d59ca6c"
+  integrity sha512-jUOBbqGDadtgjtxQe8YpaiRVy9WGIBUCfQoKlfyuBuI6BNHg1HdsBwL9qetru99uGTTy9L0fEwYoY9J8lhNXqw==
+
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz#ab7043b037e68b722f93f376afb05e85c0699523"

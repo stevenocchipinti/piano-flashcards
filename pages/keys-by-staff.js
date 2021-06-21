@@ -1,11 +1,10 @@
 import styled from "styled-components"
-import Head from "next/head"
 import { useState, useEffect } from "react"
 
+import Layout from "../components/Layout"
+import Card from "../components/Card"
 import Piano from "../components/Piano"
 import Staff from "../components/Staff"
-
-const Main = styled.main``
 
 const trebleNotes = {
   "treble-b3": "b",
@@ -67,18 +66,12 @@ const Notes = () => {
   useEffect(() => setRandomNote(), [])
 
   return (
-    <>
-      <Head>
-        <title>Piano notes</title>
-        <meta name="description" content="Train your visual memory for piano" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Main>
+    <Layout>
+      <Card>
         <Staff note={note} />
-        <Piano onClick={onClick} />
-      </Main>
-    </>
+      </Card>
+      <Piano noArrows onClick={onClick} />
+    </Layout>
   )
 }
 

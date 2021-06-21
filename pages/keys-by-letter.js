@@ -2,10 +2,9 @@ import styled from "styled-components"
 import Head from "next/head"
 import { useState, useEffect } from "react"
 
+import Layout from "../components/Layout"
 import Piano from "../components/Piano"
 import Card from "../components/Card"
-
-const Main = styled.main``
 
 const naturalNotes = ["a", "b", "c", "d", "e", "f", "g"]
 const sharpNotes = ["a-sharp", "c-sharp", "d-sharp", "f-sharp", "g-sharp"]
@@ -47,18 +46,10 @@ const Notes = () => {
   useEffect(() => setRandomNote(), [])
 
   return (
-    <>
-      <Head>
-        <title>Piano notes</title>
-        <meta name="description" content="Train your visual memory for piano" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Main>
-        <Card>{note}</Card>
-        <Piano onClick={onClick} />
-      </Main>
-    </>
+    <Layout>
+      <Card>{note}</Card>
+      <Piano onClick={onClick} />
+    </Layout>
   )
 }
 
