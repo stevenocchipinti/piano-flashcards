@@ -43,12 +43,6 @@ const Symbols = styled.span`
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Piano flash cards</title>
-        <meta name="description" content="Train your visual memory for piano" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Header>
         <h1>Piano Flashcards</h1>
         {/*<!-- Photo by <a href="https://unsplash.com/@jplenio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Johannes Plenio</a> on <a href="https://unsplash.com/s/photos/piano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->*/}
