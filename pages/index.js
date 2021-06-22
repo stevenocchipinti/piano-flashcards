@@ -45,7 +45,7 @@ const ButtonLink = styled.button.attrs({ as: "a" })`
   color: inherit;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow);
   text-decoration: none;
   font-family: "Raleway";
   display: block;

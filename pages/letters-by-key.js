@@ -19,12 +19,7 @@ const Keys = () => {
   const isWhiteKey = whiteKeys.includes(key)
 
   const onClick = userKey => {
-    if (key === userKey) {
-      console.log("Correct")
-      setRandomKey()
-    } else {
-      console.log("Incorrect")
-    }
+    if (key === userKey) setRandomKey()
   }
 
   useEffect(() => setRandomKey(), [])
@@ -33,9 +28,9 @@ const Keys = () => {
     <Layout>
       <Piano arrow={key} />
       {isWhiteKey ? (
-        <WhiteButtons onClick={onClick} />
+        <WhiteButtons correctKey={key} onClick={onClick} />
       ) : (
-        <BlackButtons onClick={onClick} />
+        <BlackButtons correctKey={key} onClick={onClick} />
       )}
     </Layout>
   )

@@ -4,7 +4,7 @@ import Logo from "../Logo"
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: #e5e5e5;
+    background-color: var(--background);
   }
 `
 
@@ -13,7 +13,7 @@ const Header = styled.header`
   align-items: center;
   padding: 0.5rem;
   background-color: white;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow);
 `
 
 const HeaderLink = styled.a`

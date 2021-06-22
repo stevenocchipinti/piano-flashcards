@@ -7,10 +7,18 @@ import "@fontsource/antic-didone/400.css"
 import CssReset from "../components/CssReset"
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --success: #68D391;
+    --fail: #FC8181;
+    --text: #2d2d2d;
+    --background: #e5e5e5;
+    --shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  }
+
   html, body {
     font-family: "Raleway";
     -webkit-font-smoothing: antialiased;
-    color: #2d2d2d;
+    color: var(--text);
   }
 
   body {

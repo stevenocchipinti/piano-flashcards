@@ -35,12 +35,7 @@ const Notes = () => {
   }
 
   const onClick = userNote => {
-    if (note === userNote || notesAreEquivalent(note, userNote)) {
-      console.log("Correct")
-      setRandomNote()
-    } else {
-      console.log("Incorrect")
-    }
+    if (note === userNote || notesAreEquivalent(note, userNote)) setRandomNote()
   }
 
   useEffect(() => setRandomNote(), [])
@@ -48,7 +43,7 @@ const Notes = () => {
   return (
     <Layout>
       <Card>{note}</Card>
-      <Piano onClick={onClick} />
+      <Piano noArrows correctNote={note} onClick={onClick} />
     </Layout>
   )
 }

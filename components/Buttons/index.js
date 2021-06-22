@@ -1,6 +1,7 @@
 import styled from "styled-components"
+import { useDelayedProp, FLASH_S } from "../../hooks/useDelayedProp"
 
-const Button = styled.button`
+const StyledButton = styled.button`
   border-radius: 12px;
   background-color: white;
   font-weight: 700;
@@ -8,11 +9,30 @@ const Button = styled.button`
   box-shadow: #777 0px 3px 0px 0px, 0px 0px 1px rgba(0, 0, 0, 0.25);
   transition: 0.1s;
 
-  &:active {
+  :active {
+    background-color: var(--fail);
+    transition: ${FLASH_S}s ease-out;
+  }
+
+  ${({ $correct }) =>
+    $correct &&
+    `
+    :active {
+      background-color: var(--success);
+      transition: 0s ease-in;
+    }
+  `}
+
+  :active {
     box-shadow: none;
     transform: translateY(3px);
   }
 `
+
+const Button = ({ correct, ...props }) => {
+  const delayedCorrect = useDelayedProp(correct)
+  return <StyledButton $correct={delayedCorrect} {...props} />
+}
 
 const Grid = styled.div`
   --button-size: ${({ large }) => (large ? "5rem" : "3.5rem")};
@@ -25,28 +45,45 @@ const Grid = styled.div`
   margin: 2rem auto;
   width: calc(var(--button-size) * 3 + var(--gap) * 2);
 
-  ${Button} {
+  ${StyledButton} {
     font-size: 1.5rem;
     height: var(--button-size);
     width: var(--button-size);
   }
 `
 
-const WhiteButtons = ({ onClick }) => (
+const WhiteButtons = ({ onClick, correctKey }) => (
   <Grid>
-    <Button onClick={() => onClick("a")}>A</Button>
-    <Button onClick={() => onClick("b")}>B</Button>
-    <Button onClick={() => onClick("c")}>C</Button>
-    <Button onClick={() => onClick("d")}>D</Button>
-    <Button onClick={() => onClick("e")}>E</Button>
-    <Button onClick={() => onClick("f")}>F</Button>
-    <Button onClick={() => onClick("g")}>G</Button>
+    <Button onClick={() => onClick("a")} correct={correctKey === "a"}>
+      A
+    </Button>
+    <Button onClick={() => onClick("b")} correct={correctKey === "b"}>
+      B
+    </Button>
+    <Button onClick={() => onClick("c")} correct={correctKey === "c"}>
+      C
+    </Button>
+    <Button onClick={() => onClick("d")} correct={correctKey === "d"}>
+      D
+    </Button>
+    <Button onClick={() => onClick("e")} correct={correctKey === "e"}>
+      E
+    </Button>
+    <Button onClick={() => onClick("f")} correct={correctKey === "f"}>
+      F
+    </Button>
+    <Button onClick={() => onClick("g")} correct={correctKey === "g"}>
+      G
+    </Button>
   </Grid>
 )
 
-const BlackButtons = ({ onClick }) => (
+const BlackButtons = ({ onClick, correctKey }) => (
   <Grid large>
-    <Button onClick={() => onClick("a-sharp")}>
+    <Button
+      correct={correctKey === "a-sharp"}
+      onClick={() => onClick("a-sharp")}
+    >
       <span>
         A<sup>♯</sup>
       </span>
@@ -55,7 +92,10 @@ const BlackButtons = ({ onClick }) => (
         B<sup>♭</sup>
       </span>
     </Button>
-    <Button onClick={() => onClick("c-sharp")}>
+    <Button
+      correct={correctKey === "c-sharp"}
+      onClick={() => onClick("c-sharp")}
+    >
       <span>
         C<sup>♯</sup>
       </span>
@@ -64,7 +104,10 @@ const BlackButtons = ({ onClick }) => (
         D<sup>♭</sup>
       </span>
     </Button>
-    <Button onClick={() => onClick("d-sharp")}>
+    <Button
+      correct={correctKey === "d-sharp"}
+      onClick={() => onClick("d-sharp")}
+    >
       <span>
         D<sup>♯</sup>
       </span>
@@ -73,7 +116,10 @@ const BlackButtons = ({ onClick }) => (
         E<sup>♭</sup>
       </span>
     </Button>
-    <Button onClick={() => onClick("f-sharp")}>
+    <Button
+      correct={correctKey === "f-sharp"}
+      onClick={() => onClick("f-sharp")}
+    >
       <span>
         F<sup>♯</sup>
       </span>
@@ -82,7 +128,10 @@ const BlackButtons = ({ onClick }) => (
         G<sup>♭</sup>
       </span>
     </Button>
-    <Button onClick={() => onClick("g-sharp")}>
+    <Button
+      correct={correctKey === "g-sharp"}
+      onClick={() => onClick("g-sharp")}
+    >
       <span>
         G<sup>♯</sup>
       </span>
