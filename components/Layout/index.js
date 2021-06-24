@@ -23,10 +23,6 @@ const HeaderLink = styled.a`
   align-items: center;
   justify-content: center;
   font-family: "Antic Didone";
-
-  :hover {
-    text-decoration: underline;
-  }
 `
 
 const Heading = styled.h1`
