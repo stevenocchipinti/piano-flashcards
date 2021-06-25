@@ -1,5 +1,3 @@
-import styled from "styled-components"
-import Head from "next/head"
 import { useState, useEffect } from "react"
 
 import Layout from "../components/Layout"
