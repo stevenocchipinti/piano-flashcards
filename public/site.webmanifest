@@ -1,6 +1,7 @@
 {
   "name": "Piano flashcards",
   "short_name": "Piano flashcards",
+  "start_url": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
