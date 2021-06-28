@@ -26,23 +26,25 @@ const GlobalStyle = createGlobalStyle`
     --fail: #FC8181;
   }
 
-  html.dark {
-    --text: #d8d8d8;
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #d8d8d8;
 
-    --background: #121212;
-    --header-background: rgba(27, 27, 27, 0.5);
-    --logo-background: rgba(27, 27, 27, 0.5);
-    --card-background: #222;
-    --gradient-background: linear-gradient(
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0.5)
-    );
+      --background: #121212;
+      --header-background: rgba(27, 27, 27, 0.5);
+      --logo-background: rgba(27, 27, 27, 0.5);
+      --card-background: #222;
+      --gradient-background: linear-gradient(
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0.5)
+      );
 
-    --shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    --white-keys: #bbb;
-    --black-keys: #222;
-    --success: #68D391;
-    --fail: #FC8181;
+      --shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+      --white-keys: #bbb;
+      --black-keys: #222;
+      --success: #68D391;
+      --fail: #FC8181;
+    }
   }
 
   html, body {
