@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 const Header = styled.header`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0.5rem;
   background-color: var(--header-background);
   box-shadow: var(--shadow);
@@ -50,6 +51,11 @@ const Layout = ({ children }) => {
             <Heading>Piano Flashcards</Heading>
           </HeaderLink>
         </Link>
+        <input
+          css="align-self: flex-end"
+          aria-label="dark mode"
+          type="checkbox"
+        />
       </Header>
       <Main>{children}</Main>
     </>

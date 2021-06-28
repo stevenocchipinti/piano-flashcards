@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import Script from "next/script"
 import Head from "next/head"
 
 import "@fontsource/raleway/100.css"
@@ -51,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Raleway";
     -webkit-font-smoothing: antialiased;
     color: var(--text);
+    background-color: var(--background);
   }
 
   body {
@@ -92,6 +94,11 @@ const App = ({ Component, pageProps }) => (
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
     </Head>
+    <Script
+      strategy="beforeInteractive"
+      type="text/javascript"
+      src="/darkmode.js"
+    ></Script>
     <Component {...pageProps} />
   </>
 )
