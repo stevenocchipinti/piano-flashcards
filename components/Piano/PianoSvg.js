@@ -9,7 +9,7 @@ const PianoSvg = ({ onClick, ...props }) => (
   >
     <g filter="url(#filter0_d)">
       <path
-        className="key key-c"
+        className="key white-key key-c"
         onClick={() => onClick?.("c")}
         d="M12 77H50V224C50 225.657 48.6569 227 47 227H15C13.3431 227 12 225.657 12 224V77Z"
         fill="white"
@@ -27,7 +27,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter1_d)">
       <path
-        className="key key-d"
+        className="key white-key key-d"
         onClick={() => onClick?.("d")}
         d="M52 77H90V224C90 225.657 88.6569 227 87 227H55C53.3431 227 52 225.657 52 224V77Z"
         fill="white"
@@ -45,7 +45,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter2_d)">
       <path
-        className="key key-e"
+        className="key white-key key-e"
         onClick={() => onClick?.("e")}
         d="M92 77H130V224C130 225.657 128.657 227 127 227H95C93.3431 227 92 225.657 92 224V77Z"
         fill="white"
@@ -63,7 +63,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter3_d)">
       <path
-        className="key key-f"
+        className="key white-key key-f"
         onClick={() => onClick?.("f")}
         d="M132 77H170V224C170 225.657 168.657 227 167 227H135C133.343 227 132 225.657 132 224V77Z"
         fill="white"
@@ -81,7 +81,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter4_d)">
       <path
-        className="key key-g"
+        className="key white-key key-g"
         onClick={() => onClick?.("g")}
         d="M172 77H210V224C210 225.657 208.657 227 207 227H175C173.343 227 172 225.657 172 224V77Z"
         fill="white"
@@ -99,7 +99,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter5_d)">
       <path
-        className="key key-a"
+        className="key white-key key-a"
         onClick={() => onClick?.("a")}
         d="M212 77H250V224C250 225.657 248.657 227 247 227H215C213.343 227 212 225.657 212 224V77Z"
         fill="white"
@@ -117,7 +117,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter6_d)">
       <path
-        className="key key-b"
+        className="key white-key key-b"
         onClick={() => onClick?.("b")}
         d="M252 77H290V224C290 225.657 288.657 227 287 227H255C253.343 227 252 225.657 252 224V77Z"
         fill="white"
@@ -135,7 +135,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter7_d)">
       <path
-        className="key key-c-sharp key-d-flat"
+        className="key black-key key-c-sharp key-d-flat"
         onClick={() => onClick?.("c-sharp")}
         d="M36 77H64V171C64 174.314 61.3137 177 58 177H42C38.6863 177 36 174.314 36 171V77Z"
         fill="black"
@@ -168,7 +168,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter8_d)">
       <path
-        className="key key-d-sharp key-e-flat"
+        className="key black-key key-d-sharp key-e-flat"
         onClick={() => onClick?.("d-sharp")}
         d="M77 77H105V171C105 174.314 102.314 177 99 177H83C79.6863 177 77 174.314 77 171V77Z"
         fill="black"
@@ -201,7 +201,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter9_d)">
       <path
-        className="key key-f-sharp key-g-flat"
+        className="key black-key key-f-sharp key-g-flat"
         onClick={() => onClick?.("f-sharp")}
         d="M155 77H183V171C183 174.314 180.314 177 177 177H161C157.686 177 155 174.314 155 171V77Z"
         fill="black"
@@ -234,7 +234,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter10_d)">
       <path
-        className="key key-g-sharp key-a-flat"
+        className="key black-key key-g-sharp key-a-flat"
         onClick={() => onClick?.("g-sharp")}
         d="M196 77H224V171C224 174.314 221.314 177 218 177H202C198.686 177 196 174.314 196 171V77Z"
         fill="black"
@@ -267,7 +267,7 @@ const PianoSvg = ({ onClick, ...props }) => (
     />
     <g filter="url(#filter11_d)">
       <path
-        className="key key-a-sharp key-b-flat"
+        className="key black-key key-a-sharp key-b-flat"
         onClick={() => onClick?.("a-sharp")}
         d="M237 77H265V171C265 174.314 262.314 177 259 177H243C239.686 177 237 174.314 237 171V77Z"
         fill="black"

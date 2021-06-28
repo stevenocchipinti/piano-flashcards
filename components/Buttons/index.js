@@ -2,10 +2,11 @@ import styled from "styled-components"
 import { useDelayedProp, FLASH_S } from "../../hooks/useDelayedProp"
 
 const StyledButton = styled.button`
-  border-radius: 12px;
-  background-color: white;
+  background-color: var(--card-background);
+  color: inherit;
   font-weight: 700;
   border: 0;
+  border-radius: 12px;
   box-shadow: #777 0px 3px 0px 0px, 0px 0px 1px rgba(0, 0, 0, 0.25);
   transition: 0.1s;
 

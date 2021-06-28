@@ -8,11 +8,41 @@ import CssReset from "../components/CssReset"
 
 const GlobalStyle = createGlobalStyle`
   :root {
+    --text: #2d2d2d;
+
+    --background: #e5e5e5;
+    --header-background: rgba(255, 255, 255, 1);
+    --logo-background: rgba(255, 255, 255, 0.5);
+    --card-background: #fff;
+    --gradient-background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.5)
+    );
+
+    --shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    --white-keys: #fff;
+    --black-keys: #000;
     --success: #68D391;
     --fail: #FC8181;
-    --text: #2d2d2d;
-    --background: #e5e5e5;
+  }
+
+  html.dark {
+    --text: #d8d8d8;
+
+    --background: #121212;
+    --header-background: rgba(27, 27, 27, 0.5);
+    --logo-background: rgba(27, 27, 27, 0.5);
+    --card-background: #222;
+    --gradient-background: linear-gradient(
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.5)
+    );
+
     --shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    --white-keys: #bbb;
+    --black-keys: #222;
+    --success: #68D391;
+    --fail: #FC8181;
   }
 
   html, body {

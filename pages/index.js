@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from "styled-components"
 import Logo from "../components/Logo"
 
 const Header = styled.header`
-  padding-top: 4rem;
+  padding: 4rem 1rem 0 0;
   display: flex;
   justify-content: center;
   margin: 0 1rem 2rem;
@@ -37,7 +37,7 @@ const Buttons = styled.div`
 `
 
 const ButtonLink = styled.button.attrs({ as: "a" })`
-  background-color: white;
+  background-color: var(--card-background);
   color: inherit;
   text-align: center;
   border-radius: 12px;
@@ -56,7 +56,7 @@ const ButtonLink = styled.button.attrs({ as: "a" })`
 
 const GlobalStyle = createGlobalStyle`
   html {
-    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)), url("/bg.jpg");
+    background: var(--gradient-background), url("/bg.jpg");
     background-size: cover;
   }
 `

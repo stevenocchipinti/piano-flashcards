@@ -9,7 +9,16 @@ const StyledPianoSvg = styled(PianoSvg).attrs(
   margin: 0 auto;
 
   .arrow {
+    fill: currentColor;
     display: none;
+  }
+
+  .white-key {
+    fill: var(--white-keys);
+  }
+
+  .black-key {
+    fill: var(--black-keys);
   }
 
   ${({ $arrow }) =>
