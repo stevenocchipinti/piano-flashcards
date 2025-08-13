@@ -16,7 +16,7 @@ const Header = styled.header`
   box-shadow: var(--shadow);
 `
 
-const HeaderLink = styled.a`
+const HeaderLink = styled(Link)`
   color: inherit;
   text-decoration: none;
   display: flex;
@@ -44,12 +44,10 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyle />
       <Header>
-        <Link href="/" passHref>
-          <HeaderLink>
-            <Logo height={42} width={42} />
-            <Heading>Piano Flashcards</Heading>
-          </HeaderLink>
-        </Link>
+        <HeaderLink href="/">
+          <Logo height={42} width={42} />
+          <Heading>Piano Flashcards</Heading>
+        </HeaderLink>
       </Header>
       <Main>{children}</Main>
     </>

@@ -36,7 +36,7 @@ const Buttons = styled.div`
   margin: auto;
 `
 
-const ButtonLink = styled.button.attrs({ as: "a" })`
+const ButtonLink = styled.button.attrs({ as: Link })`
   background-color: var(--card-background);
   color: inherit;
   text-align: center;
@@ -72,25 +72,17 @@ export default function Home() {
       <GlobalStyle />
 
       <Header>
-        <Link href="/" passHref>
-          <HeaderLink>
-            <Logo css="max-height: 100px; max-width: 100px;" />
-            <Heading>Piano Flashcards</Heading>
-          </HeaderLink>
-        </Link>
+        <HeaderLink href="/">
+          <Logo css="max-height: 100px; max-width: 100px;" />
+          <Heading>Piano Flashcards</Heading>
+        </HeaderLink>
       </Header>
 
       <Main>
         <Buttons>
-          <Link href="/letters-by-key" passHref>
-            <ButtonLink>Letters by key</ButtonLink>
-          </Link>
-          <Link href="/keys-by-letter" passHref>
-            <ButtonLink>Keys by letters</ButtonLink>
-          </Link>
-          <Link href="/keys-by-staff" passHref>
-            <ButtonLink>Keys by staff</ButtonLink>
-          </Link>
+          <ButtonLink href="/letters-by-key">Letters by key</ButtonLink>
+          <ButtonLink href="/keys-by-letter">Keys by letters</ButtonLink>
+          <ButtonLink href="/keys-by-staff">Keys by staff</ButtonLink>
         </Buttons>
       </Main>
     </Layout>
